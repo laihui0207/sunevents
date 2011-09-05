@@ -1,0 +1,145 @@
+body {
+  background: #ffffff;
+  text-decoration:none;
+}
+div#header {
+  background: #cecece;
+  -moz-border-radius:5px;
+  -wekbit-border-radius:5px;
+  border-radius: 5px;
+}
+div#head_logo {
+  padding-left:10px;
+
+}
+div#logo {
+  padding:10px 5px 0 5px;
+  font-size:xx-large;
+}
+div#head_title{
+  font-style:italic;
+  padding-left:10px;
+}
+div#head_action {
+  float:right;
+  margin:5px 10px;
+  padding-right:30px;
+}
+.slider_item {
+  padding-left:5px;
+  margin-top:5px;        
+}
+.slider_item fieldset legend {
+  font-weight:bold;
+  margin: 5px 0;
+}
+div#content {
+  margin-top:10px;
+}
+div#content fieldset {
+
+}
+div#content fieldset legend {
+  font-size:25px;
+  font-weight: bold;
+  padding-bottom:10px;
+  padding-left:10px;
+}
+div#slider {
+  -moz-border-radius:5px;
+  -wekbit-border-radius:5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  height:auto;
+  background: #cecece;
+}
+div.list_pagination {
+  padding-bottom:0;
+}
+div#footer {
+  border-top:1px solid;
+  height:50px;
+  text-align:center;
+}
+.list_head {
+  padding:0 5px;
+  border-bottom:1px solid;
+}
+.list_title {
+  font-size: 1.5em;
+  padding:0 5px;
+  float:left;
+  margin-top:10px;
+}
+.list_action {
+  text-align:right;
+  float:right;
+  margin-top:25px;
+  margin-right:5px;
+}
+.list_info {
+margin-bottom:10px;
+}
+.list_datetime {
+  padding:0 10px;
+  float:left;
+  color:#AAA;
+}
+.list_other {
+  padding:0 10px;
+  float:right;
+}
+.list_content {
+  padding:0px 10px;
+  margin:10px 0;
+  text-align:left;
+}
+.list_readmore {
+  margin:5px,10px;
+  font-style:italic;
+  padding-left:15px;
+}
+.item_action {
+  float:right;
+  font-size:1.2em;
+  margin-bottom:1px;
+  margin-top:-20px;
+}
+.content_form {
+  margin-top:5px;
+  padding:5px 15px;
+  border: 1px solid;
+  -moz-border-radius:5px;
+  -wekbit-border-radius:5px;
+  border-radius:5px;
+}
+.content_field {
+  margin-top: 10px;
+
+}
+.content_field label {
+  float:left;
+  width: 110px;
+  text-align:right;
+  padding-right:10px;
+}
+.content_field input{
+  background:#ffffff;
+  -moz-border-radius:3px;
+  -wekbit-border-radius:3px;
+  border-radius:3px;
+  font:italic 13px Georgia,"Times new Roman",Times,Serif;
+  padding:5px;
+  width:200px;
+}
+.content_field input:focus{
+  background:#eaeaea;
+}
+.content_actions
+{
+  text-align:center;
+  margin:8px 0;
+}
+.content_textarea {
+  width:550px;
+}

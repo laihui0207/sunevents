@@ -1,0 +1,59 @@
+<%= javascript_include_tag :ckeditor %>
+<!--
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= category.description %></td>
+      <td><%= link_to 'Show', category %></td>
+      <td><%= link_to 'Edit', edit_category_path(category) %></td>
+      <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>
+-->
+<div class="item_action">
+  <%= link_to "Add category", new_category_path %>
+</div>
+<div class="clear"> </div>
+<% @categories.each do |category| %>
+  <div class="list_head">
+    <div class="list_title">
+      <%=link_to category.name,category  %>
+    </div>
+    <div class="list_action">
+      <%= link_to "Edit",edit_category_path(category)  %> | <%= link_to 'Destroy', category, :confirm=>'Are your sure?', :method=>:delete %>
+    </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="list_info">
+    <div class="list_datetime">
+     laihui Post at <%= distance_of_time_in_words(category.created_at,Time.now) %> ago , category: Ruby 
+    </div>
+    <div class="list_other">
+      comment(1) | read(10) 
+    </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="list_content">
+    <%=h category.description  %>
+  </div>
+  <div class="list_readmore">
+    <%=link_to 'Read More',category  %>
+  </div>
+<% end %>
+<div class="list_pagination">
+  <%= h will_paginate @categories %>
+</div>

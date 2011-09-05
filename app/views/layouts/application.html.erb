@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sunevents</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+  <head>
+    <title>Sunevents</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="main" class="container_16">
+      <div id="header" class="grid_16">
+        <%= render :partial=>"application/head" %>    
+      </div>
+      <div class="clear"></div>
+      <div id="content" class="grid_12">
+        <fieldset>
+          <legend><%= @title %></legend>
+          <%= yield %>
+        </fieldset>
+      </div>
+      <div id="slider" class="grid_4">
+        <%=render :partial=>"application/slider"  %>
+      </div>
+      <div class="clear"></div>
+      <div id="footer" class="grid_16">
+        <%=render :partial=>"application/foot"%>
+      </div>
+      <div class="clear"></div>
+    </body>
+  </html>

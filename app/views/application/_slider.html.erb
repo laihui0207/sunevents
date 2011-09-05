@@ -1,0 +1,54 @@
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+$(document).ready(function(){
+  $.get('/categories.json',function(data){
+    for (x in data) {
+      $("#category ul").append($("<li>"+data[x].category.name+"</li>")); 
+    }
+  })
+})
+//]]>
+</script>
+<div class="slider_item">
+  <fieldset>
+    <legend>Search</legend>
+    <div id="search">
+      <input type="search" name="search" placeholder="search...." id="search"/> <input type="submit" name="submit" value="search"/>
+    </div>
+  </fieldset>  
+</div>
+<div id="category" class="slider_item">
+  <fieldset>
+    <legend>Category</legend>
+    <ul>
+    </ul>
+  </fieldset>
+</div>
+<div id="calander" class="slider_item">
+  <fieldset>
+    <legend>Calander</legend>
+    <ul>
+      <li>
+        2011-07 (10)
+      </li>
+      <li>
+        2011-08 (30)
+      </li>
+
+    </ul>
+  </fieldset>
+</div>
+<div class="slider_item">
+  <fieldset>
+    <legend>Friend links</legend>
+    <ul>
+      <li>        
+        <a href="#">baidu</a> 
+      </li>
+      <li>
+        <a href="#">google</a>
+      </li>
+
+    </ul>
+  </fieldset>
+</div>
