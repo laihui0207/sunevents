@@ -60,6 +60,7 @@ div#footer {
   border-top:1px solid;
   height:50px;
   text-align:center;
+  margin-top:8px; 
 }
 .list_head {
   padding:0 5px;
