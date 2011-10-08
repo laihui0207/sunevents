@@ -1,4 +1,6 @@
 Sunevents::Application.routes.draw do
+  resources :categories
+
   get "about/index"
 
   resources :notes

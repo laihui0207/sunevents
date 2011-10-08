@@ -1,12 +1,5 @@
 <script type="text/javascript" language="javascript" charset="utf-8">
 //<![CDATA[
-$(document).ready(function(){
-  $.get('/categories.json',function(data){
-    for (x in data) {
-      $("#category ul").append($("<li>"+data[x].category.name+"</li>")); 
-    }
-  })
-})
 //]]>
 </script>
 <div class="slider_item">

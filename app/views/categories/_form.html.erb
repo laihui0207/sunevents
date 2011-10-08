@@ -1,0 +1,27 @@
+<%= form_for(@category,:html=>{:class=>"content_form"}) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="content_field">
+    <%= f.label :name %>
+    <%= f.text_field :name,:placeholder=>"input category name" %>
+  </div>
+  <div class="content_field">
+    <div>
+      <%= f.label :description %><br/>
+    </div>
+    <%= f.cktext_area :description %>    
+  </div>
+  <div class="content_actions">
+    <%= f.submit %>
+  </div>
+<% end %>
