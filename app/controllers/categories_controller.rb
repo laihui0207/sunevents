@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
+  require "cgi"
   def index
     @categories = Category.paginate :page=>params[:page]||1,:per_page=>10
 
@@ -44,7 +45,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to categories_url, notice: 'Category was successfully created.' }
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }

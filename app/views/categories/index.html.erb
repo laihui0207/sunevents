@@ -11,7 +11,7 @@
   <% @categories.each do |category| %>
     <tr>
       <td><%= category.name %></td>
-      <td><%= category.description %></td>
+      <td><%= category.description.html_safe %></td>
       <td><%= link_to 'Show', category %></td>
       <td><%= link_to 'Edit', edit_category_path(category) %></td>
       <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -47,7 +47,7 @@
     <div class="clear"> </div>
   </div>
   <div class="list_content">
-    <%=h category.description  %>
+    <%= category.description.html_safe  %>
   </div>
   <div class="list_readmore">
     <%=link_to 'Read More',category  %>
