@@ -13,13 +13,13 @@
 
   <div class="content_field">
     <%= f.label :name %>
-    <%= f.text_field :name,:placeholder=>"input category name" %>
+    <%= f.text_field :name,:placeholder=>"Input Category Name" %>
   </div>
   <div class="content_field">
     <div>
       <%= f.label :description %><br/>
+      <%= f.cktext_area :description,:toolbar=>'basic' %>
     </div>
-    <%= f.cktext_area :description %>    
   </div>
   <div class="content_actions">
     <%= f.submit %>

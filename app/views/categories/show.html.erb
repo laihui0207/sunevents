@@ -1,15 +1,25 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @category.description %>
-</p>
-
+  <div class="list_head">
+    <div class="list_title">
+      <%=link_to @category.name,@category  %>
+    </div>
+    <div class="list_action">
+      <%= link_to "Edit",edit_category_path(@category)  %> | <%= link_to 'Destroy', @category, :confirm=>'Are your sure?', :method=>:delete %>
+    </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="list_info">
+    <div class="list_datetime">
+     laihui Post at <%= distance_of_time_in_words(@category.created_at,Time.now) %> ago , category: Ruby 
+    </div>
+    <div class="list_other">
+      comment(1) | read(10) 
+    </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="list_content">
+    <%= @category.description.html_safe  %>
+  </div>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

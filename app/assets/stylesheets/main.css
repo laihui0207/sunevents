@@ -124,7 +124,7 @@ margin-bottom:10px;
 .content_field label {
   float:left;
   width: 110px;
-  text-align:right;
+  text-align:left;
   padding-right:10px;
 }
 .content_field input{
@@ -132,7 +132,6 @@ margin-bottom:10px;
   -moz-border-radius:3px;
   -wekbit-border-radius:3px;
   border-radius:3px;
-  font:italic 13px Georgia,"Times new Roman",Times,Serif;
   padding:5px;
   width:200px;
 }

@@ -1,4 +1,4 @@
-<%= form_for(@note) do |f| %>
+<%= form_for(@note,:html=>{:class=>"content_form"}) do |f| %>
   <% if @note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -11,15 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="content_field">
+    <%= f.label :title %>
+    <%= f.text_field :title,:placeholder=>"Input Notes title" %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+  <div class="content_field">
+    <%= f.label :category_id %>
+    <%= select_tag :category_id,:category_id %>
   </div>
-  <div class="actions">
+  <div class="clear">
+    
+  </div>
+  <div class="content_field">
+    <div>
+      <%= f.label :content %><br/>
+      <%= f.cktext_area :content,:toolbar=>'Easy' %>
+    </div>
+  </div>
+  <div class="content_actions">
     <%= f.submit %>
   </div>
 <% end %>
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+$(document).ready(function(){
+$.get("/categories.json",function(data){
+  for(x in data) { 
+      $("#category_id").append($("<option value='"+data[x].id+"'>"+data[x].name+"</option>"));
+    }
+  });
+  })
+//]]>
+</script>

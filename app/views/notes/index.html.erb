@@ -1,4 +1,4 @@
-<h1>Listing notes</h1>
+<!--<h1>Listing notes</h1>
 
 <table>
   <tr>
@@ -23,3 +23,37 @@
 <br />
 
 <%= link_to 'New Note', new_note_path %>
+-->
+<div class="item_action">
+  <%= link_to "Add Notes", new_note_path %>
+</div>
+<div class="clear"> </div>
+<% @notes.each do |note| %>
+  <div class="list_head">
+    <div class="list_title">
+      <%=link_to note.title,note  %>
+    </div>
+    <div class="list_action">
+      <%= link_to "Edit",edit_note_path(note)  %> | <%= link_to 'Destroy', note, :confirm=>'Are your sure?', :method=>:delete %>
+    </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="list_info">
+    <div class="list_datetime">
+     laihui Post at <%= distance_of_time_in_words(note.created_at,Time.now) %> ago , category: Ruby 
+    </div>
+    <div class="list_other">
+      comment(1) | read(10) 
+    </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="list_content">
+    <%= note.content.html_safe  %>
+  </div>
+  <div class="list_readmore">
+    <%=link_to 'Read More',note  %>
+  </div>
+<% end %>
+<div class="list_pagination">
+  <%= h will_paginate @notes %>
+</div>
